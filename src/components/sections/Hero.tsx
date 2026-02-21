@@ -76,7 +76,7 @@ export default function Hero() {
                                     <div className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-primary mb-1">
                                         {stat.value}
                                     </div>
-                                    <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted leading-tight">
+                                    <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-text-muted font-medium leading-tight">
                                         {stat.label}
                                     </div>
                                 </div>

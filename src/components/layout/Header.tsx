@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteContent } from "@/data/content";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
@@ -13,7 +14,18 @@ export default function Header() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center">
+                    <Link href="/" className="flex items-center gap-3 group">
+                        {siteContent.header.logoImage && (
+                            <div className="relative w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+                                <Image
+                                    src={siteContent.header.logoImage}
+                                    alt="Logo"
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                />
+                            </div>
+                        )}
                         <span className="font-serif text-xl md:text-2xl font-bold tracking-tighter text-primary transition-colors">
                             {siteContent.header.logo}
                         </span>

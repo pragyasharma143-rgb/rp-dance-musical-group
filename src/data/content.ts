@@ -1,6 +1,7 @@
 export const siteContent = {
   header: {
     logo: "RP Dance & Musical group",
+    logoImage: "/images/official_logo.png",
     nav: [
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
@@ -24,6 +25,7 @@ export const siteContent = {
   },
   aboutPreview: {
     title: "Our Heritage & Vision",
+    image: "/images/heritage_vision.jpg",
     description: "Born from an artist’s devotion to heritage, RP Dance & Musical Group is a collective of trained performers, musicians, and cultural ambassadors led by Rekha Parihar. Each member is rooted in traditional art forms, crafting experiences that celebrate Rajasthan with authenticity. Whether at a global festival, cultural symposium, academic institution, corporate event or ceremonial setting, the group presents immersive showcases combining:",
     bullets: [
       "Live folk music & original choreography",

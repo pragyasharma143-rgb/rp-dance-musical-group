@@ -1,10 +1,11 @@
 import React from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTAButton from "@/components/ui/CTAButton";
+import Image from "next/image";
 import { siteContent } from "@/data/content";
 
 export default function AboutPreview() {
-    const { title, description, bullets, closing, cta } = siteContent.aboutPreview;
+    const { title, description, bullets, closing, cta, image } = siteContent.aboutPreview;
 
     return (
         <section className="py-24 md:py-32 bg-background overflow-hidden border-t border-white/5">
@@ -43,14 +44,22 @@ export default function AboutPreview() {
                     {/* Visual Element */}
                     <div className="flex-1 order-1 lg:order-2 relative group w-full aspect-square md:aspect-video lg:aspect-square">
                         <div className="absolute inset-0 border border-primary/20 -translate-x-4 -translate-y-4 transition-transform duration-500 group-hover:translate-x-0 group-hover:translate-y-0" />
-                        <div className="absolute inset-0 bg-surface flex items-center justify-center p-8 overflow-hidden">
-                            {/* Placeholder for actual image - representing the vibe with abstract shapes for now */}
-                            <div className="w-full h-full border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent relative overflow-hidden flex flex-col items-center justify-center text-center">
-                                <div className="text-8xl font-black font-decorative text-white/[0.03] select-none rotate-12">
-                                    LEGACY
+                        <div className="absolute inset-0 bg-surface overflow-hidden">
+                            {image ? (
+                                <Image
+                                    src={image}
+                                    alt={title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                            ) : (
+                                <div className="w-full h-full border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent relative overflow-hidden flex flex-col items-center justify-center text-center">
+                                    <div className="text-8xl font-black font-decorative text-white/[0.03] select-none rotate-12">
+                                        LEGACY
+                                    </div>
+                                    <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
                                 </div>
-                                <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-                            </div>
+                            )}
                         </div>
                     </div>
                 </div>

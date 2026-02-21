@@ -1,6 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RP Dance & Musical group - Official Website
 
-## Getting Started
+Welcome to the official repository for the **RP Dance & Musical group**, a world-class Rajasthani folk performance group founded by **Ms. Rekha Parihar**. 
+
+This website serves as a digital home for the group's legacy, showcasing over 30 years of artistic excellence, 1,500+ global performances, and a rich heritage of Rajasthani folk dance and music.
+
+## ✨ Features
+
+- **Modern & Premium Design**: A high-end visual experience that reflects the elegance of traditional folk arts.
+- **Mobile Optimized**: Fully responsive layout for seamless browsing on all devices.
+- **Dynamic Content**: Sections for "Our Journey", "Gallery", "Services", and "Media Coverage".
+- **Folk Art Highlights**: Dedicated pages for Ghoomar, Kalbelia, Fire Dance, and more.
+- **SEO Ready**: Optimized metadata and JSON-LD schema for global visibility.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Theme**: Dark/Light mode support with `next-themes`
+- **Language**: TypeScript
+
+## 🚀 Getting Started
 
 First, run the development server:
 
@@ -8,29 +28,14 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏛️ Legacy of Rekha Parihar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Founded in 1999, RP Dance & Musical group is more than a performing troupe; it is a movement to preserve the vanishing folk arts of Rajasthan. Under the leadership of Rekha Parihar, the group has represented India at international festivals in over 15 countries.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*“Some journeys create success. A few create legacy. This is one of them.”*
