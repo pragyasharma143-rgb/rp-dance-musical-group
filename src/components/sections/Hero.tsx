@@ -5,7 +5,7 @@ import { siteContent } from "@/data/content";
 import { CheckCircle2, PhoneCall } from "lucide-react";
 
 export default function Hero() {
-    const { title, subtitle, primaryCTA, secondaryCTA, stats, bullets } = siteContent.hero;
+    const { title, primaryCTA, secondaryCTA, stats, bullets } = siteContent.hero;
 
     return (
         <section className="relative min-h-[calc(100svh-4rem)] overflow-hidden bg-background pb-16 pt-12 md:pb-20 md:pt-16">
@@ -21,7 +21,13 @@ export default function Hero() {
                         </h1>
 
                         <p className="max-w-xl text-base leading-7 text-text-muted sm:text-lg sm:leading-8">
-                            {subtitle}
+                            A few like{" "}
+                            <span className="mx-1 inline-block font-serif text-3xl font-bold leading-none text-primary sm:text-4xl">
+                                Rekha Parihar
+                            </span>
+                            <span className="block mt-2">
+                                become the bridge between tradition and time.
+                            </span>
                         </p>
 
                         <ul className="space-y-3">
@@ -60,20 +66,21 @@ export default function Hero() {
                     </div>
 
                     <div className="order-1 lg:order-2">
-                        <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-[2.2rem] border border-black/10 bg-surface shadow-xl dark:border-white/10">
+                        <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-[2.2rem] border border-black/10 bg-surface dark:border-white/10">
                             <div className="absolute -right-3 -top-3 h-full w-full rounded-[2.2rem] border border-primary/30" />
                             <Image
                                 src="/images/founder.jpg"
                                 alt="Rekha Parihar performing traditional Rajasthani folk dance"
                                 fill
-                                className="object-cover object-center sm:object-top"
+                                className="object-cover object-center saturate-110 contrast-105 brightness-105 sm:object-top"
                                 priority
+                                quality={95}
                                 sizes="(max-width: 640px) 94vw, (max-width: 1024px) 54vw, 42vw"
                             />
-                            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/65 to-transparent" />
-                            <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/30 bg-black/45 p-3 text-white shadow-lg backdrop-blur-[2px] sm:bottom-5 sm:left-5 sm:right-auto sm:max-w-[260px] sm:p-4">
+                            <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-primary/45 via-primary/15 to-transparent" />
+                            <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-primary-light/70 bg-primary/70 p-3 text-white sm:bottom-5 sm:left-5 sm:right-auto sm:max-w-[280px] sm:p-4">
                                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-light">Founder</p>
-                                <p className="mt-1 text-xl font-serif font-bold leading-tight sm:text-2xl">Rekha Parihar</p>
+                                <p className="mt-1 text-2xl font-serif font-bold leading-tight text-white sm:text-3xl">Rekha Parihar</p>
                                 <p className="mt-1 text-xs uppercase tracking-[0.12em] text-white/85">Artistic Director</p>
                             </div>
                         </div>

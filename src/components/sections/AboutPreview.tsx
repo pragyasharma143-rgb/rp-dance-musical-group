@@ -49,10 +49,11 @@ export default function AboutPreview() {
                                 src={siteContent.aboutPreview.image}
                                 alt="Ms Rekha Parihar"
                                 fill
-                                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                                className="object-cover object-center saturate-105 contrast-105 brightness-105 transition-transform duration-700 group-hover:scale-105"
+                                quality={92}
                                 sizes="(max-width: 1024px) 92vw, 45vw"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/15 to-transparent" />
                         </div>
                     </div>
                 </div>

@@ -29,9 +29,10 @@ export default function GalleryPreview() {
                                 alt={item.alt}
                                 fill
                                 sizes="(max-width: 639px) 94vw, (max-width: 1023px) 48vw, 32vw"
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                className="object-cover saturate-105 contrast-105 brightness-105 transition-transform duration-500 group-hover:scale-105"
+                                quality={90}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/35 via-primary/5 to-transparent" />
                             <div className="absolute bottom-0 left-0 p-5 text-white">
                                 <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-light">{item.category}</p>
                                 <h4 className="text-xl font-serif font-bold leading-tight">{item.alt}</h4>
