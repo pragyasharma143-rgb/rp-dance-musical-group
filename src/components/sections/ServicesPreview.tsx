@@ -2,43 +2,42 @@ import React from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Link from "next/link";
 import { siteContent } from "@/data/content";
+import CTAButton from "@/components/ui/CTAButton";
 
 export default function ServicesPreview() {
     return (
-        <section className="py-24 md:py-32 bg-surface">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <section className="bg-surface py-16 md:py-24">
+            <div className="section-shell">
+                <div className="mb-10 flex flex-col gap-5 md:mb-14 md:flex-row md:items-end md:justify-between">
                     <SectionHeading
                         title="Performances & Artistry"
                         subtitle="Our Services"
                     />
                     <Link
                         href="/services"
-                        className="text-sm font-semibold uppercase tracking-widest text-primary border-b border-primary/40 pb-1 hover:border-primary transition-colors duration-200 mb-4"
+                        className="text-sm font-semibold uppercase tracking-[0.12em] text-primary border-b border-primary/40 pb-1 hover:border-primary transition-colors duration-200"
                     >
                         All Services →
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {siteContent.services.map((service) => (
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {siteContent.services.slice(0, 6).map((service, index) => (
                         <div
                             key={service.id}
-                            className="group p-8 border border-white/5 bg-background hover:bg-surface hover:border-primary/20 transition-all duration-300 relative overflow-hidden"
+                            className="group mobile-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30"
                         >
-                            <div className="absolute -right-4 -top-4 text-6xl font-serif font-black text-white/[0.02] group-hover:text-primary/[0.03] transition-colors duration-300">
-                                0{siteContent.services.indexOf(service) + 1}
-                            </div>
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">Service 0{index + 1}</p>
 
-                            <h3 className="text-2xl font-serif font-bold text-text mb-4 group-hover:text-primary transition-colors duration-300">
+                            <h3 className="mt-3 text-2xl font-serif font-bold text-text transition-colors duration-300 group-hover:text-primary">
                                 {service.title}
                             </h3>
 
-                            <p className="text-text-muted leading-relaxed font-light mb-8 group-hover:text-text/80 transition-colors duration-300">
+                            <p className="mb-6 mt-3 text-base leading-7 text-text-muted">
                                 {service.description}
                             </p>
 
-                            <div className="h-0.5 w-0 bg-primary group-hover:w-12 transition-all duration-500 ease-out" />
+                            <CTAButton label="Book this service" href="/contact" variant="secondary" className="w-full !text-xs" />
                         </div>
                     ))}
                 </div>

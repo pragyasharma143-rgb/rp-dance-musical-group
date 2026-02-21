@@ -1,25 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Cinzel_Decorative } from "next/font/google";
+import type { Viewport } from "next";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-serif",
-  subsets: ["latin"],
-});
-
-const cinzel = Cinzel_Decorative({
-  variable: "--font-decorative",
-  weight: ["400", "700", "900"],
-  subsets: ["latin"],
-});
 
 import { siteMetadata } from "@/data/metadata";
 import JsonLd from "@/components/seo/JsonLd";
+import MobileStickyCTA from "@/components/sections/MobileStickyCTA";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -42,6 +27,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#d28d15",
+};
+
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export default function RootLayout({
@@ -50,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${playfair.variable} ${cinzel.variable}`}>
+    <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning className="bg-background text-text font-sans antialiased min-h-screen flex flex-col transition-colors duration-300">
         <ThemeProvider
           attribute="class"
@@ -60,6 +52,7 @@ export default function RootLayout({
         >
           <JsonLd />
           {children}
+          <MobileStickyCTA />
         </ThemeProvider>
       </body>
     </html>

@@ -2,40 +2,39 @@ import React from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Link from "next/link";
 import { siteContent } from "@/data/content";
+import Image from "next/image";
 
 export default function GalleryPreview() {
     return (
-        <section className="py-24 md:py-32 bg-background">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <section className="bg-background py-16 md:py-24">
+            <div className="section-shell">
+                <div className="mb-10 flex flex-col gap-5 md:mb-14 md:flex-row md:items-end md:justify-between">
                     <SectionHeading
                         title="Moments in Motion"
                         subtitle="Our Gallery"
                     />
                     <Link
                         href="/work"
-                        className="text-sm font-semibold uppercase tracking-widest text-primary border-b border-primary/40 pb-1 hover:border-primary transition-colors duration-200 mb-4"
+                        className="text-sm font-semibold uppercase tracking-[0.12em] text-primary border-b border-primary/40 pb-1 hover:border-primary transition-colors duration-200"
                     >
                         View Full Gallery →
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {siteContent.gallery.slice(0, 3).map((item) => (
-                        <div key={item.id} className="relative aspect-[4/5] bg-surface group overflow-hidden">
-                            {/* Simplified visual representation of gallery items */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <div className="absolute inset-0 border border-white/5 bg-white/[0.02]" />
-
-                            <div className="absolute bottom-0 left-0 p-8 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-2">{item.category}</p>
-                                <h4 className="text-xl font-serif font-bold text-text">{item.alt}</h4>
-                            </div>
-
-                            {/* Abstract placeholder visual */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full flex items-center justify-center opacity-10">
-                                <div className="w-1/2 h-1/2 border border-primary rotate-45" />
-                                <div className="absolute w-1/3 h-1/3 border border-primary -rotate-12" />
+                        <div key={item.id} className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-black/10 dark:border-white/10">
+                            <Image
+                                src={item.src}
+                                alt={item.alt}
+                                fill
+                                sizes="(max-width: 639px) 94vw, (max-width: 1023px) 48vw, 32vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+                            <div className="absolute bottom-0 left-0 p-5 text-white">
+                                <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-light">{item.category}</p>
+                                <h4 className="text-xl font-serif font-bold leading-tight">{item.alt}</h4>
                             </div>
                         </div>
                     ))}

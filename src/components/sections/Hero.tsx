@@ -2,81 +2,56 @@ import React from "react";
 import Image from "next/image";
 import CTAButton from "@/components/ui/CTAButton";
 import { siteContent } from "@/data/content";
+import { CheckCircle2, PhoneCall } from "lucide-react";
 
 export default function Hero() {
-    const { title, subtitle, primaryCTA, secondaryCTA, stats } = siteContent.hero;
+    const { title, subtitle, primaryCTA, secondaryCTA, stats, bullets } = siteContent.hero;
 
     return (
-        <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-background transition-colors duration-300">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="relative min-h-[calc(100svh-4rem)] overflow-hidden bg-background pb-16 pt-12 md:pb-20 md:pt-16">
+            <div className="section-shell relative z-10">
+                <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-12">
+                    <div className="order-2 space-y-7 lg:order-1">
+                        <p className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                            Rajasthan Folk Performances
+                        </p>
 
-                    {/* Left: Founder Image with Premium Frame */}
-                    <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
-                        <div className="relative w-full max-w-[550px] aspect-[4/5] lg:aspect-[3/4]">
-                            {/* Decorative Background Frame */}
-                            <div className="absolute top-0 right-0 w-[95%] h-full border-t-[12px] border-r-[12px] border-primary/90 -mr-4 -mt-4 rounded-tr-[40px] z-0 opacity-80" />
-
-                            <div className="relative w-full h-full z-10 overflow-hidden rounded-bl-[100px] rounded-tr-[40px]">
-                                <Image
-                                    src="/images/founder.jpg"
-                                    alt="Rekha Parihar - Founder"
-                                    fill
-                                    className="object-cover object-center transition-transform duration-1000 hover:scale-105"
-                                    priority
-                                />
-                                {/* Bottom Left Cutout Accent */}
-                                <div className="absolute bottom-0 left-0 w-32 h-32 bg-background rounded-tr-[100px] z-20" />
-                            </div>
-
-                            {/* Floating Label */}
-                            <div className="absolute -bottom-6 -right-6 bg-surface p-6 shadow-2xl border border-white/5 z-30 hidden md:block">
-                                <div className="text-xs uppercase tracking-[0.3em] text-primary mb-1">Founder</div>
-                                <div className="text-2xl font-serif font-bold text-text">Rekha Parihar</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right: Text Content (Editorial Layout) */}
-                    <div className="flex flex-col items-end text-right order-1 lg:order-2">
-                        <div className="mb-6 inline-flex items-center gap-4">
-                            <span className="h-[1px] w-12 bg-primary/40 block" />
-                            <span className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Established Legacy</span>
-                        </div>
-
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-decorative font-bold leading-[1.2] mb-12 text-text uppercase tracking-widest max-w-xl">
-                            {title.split(". ").map((sentence, i) => (
-                                <span key={i} className="block">
-                                    {sentence}{i === 0 ? "." : ""}
-                                </span>
-                            ))}
+                        <h1 className="max-w-2xl font-decorative text-4xl font-bold uppercase leading-tight tracking-[0.04em] text-text sm:text-5xl lg:text-6xl">
+                            {title}
                         </h1>
 
-                        <div className="space-y-4 max-w-lg mb-12">
-                            <p className="text-lg md:text-xl text-text-muted font-light tracking-wide">
-                                A few — like
-                            </p>
-                            <div className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-black italic text-text drop-shadow-sm leading-none py-2 md:translate-x-4">
-                                Rekha Parihar
-                            </div>
-                            <p className="text-lg md:text-xl text-text-muted font-light tracking-widest">
-                                become the bridge <br /> between tradition and time.
-                            </p>
+                        <p className="max-w-xl text-base leading-7 text-text-muted sm:text-lg sm:leading-8">
+                            {subtitle}
+                        </p>
+
+                        <ul className="space-y-3">
+                            {bullets.map((bullet) => (
+                                <li key={bullet} className="flex items-start gap-3 text-sm leading-6 text-text sm:text-base">
+                                    <CheckCircle2 size={18} className="mt-1 shrink-0 text-primary" />
+                                    <span>{bullet}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="flex flex-col gap-3 sm:flex-row">
+                            <CTAButton label={primaryCTA.label} href={primaryCTA.href} variant="primary" className="w-full sm:w-auto" />
+                            <CTAButton label={secondaryCTA.label} href={secondaryCTA.href} variant="secondary" className="w-full sm:w-auto" />
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-6 mt-8">
-                            <CTAButton label={primaryCTA.label} href={primaryCTA.href} variant="primary" />
-                            <CTAButton label={secondaryCTA.label} href={secondaryCTA.href} variant="secondary" />
+                        <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-black/10 bg-surface p-3 text-xs uppercase tracking-[0.14em] text-text-muted dark:border-white/10">
+                            <PhoneCall size={16} className="text-primary" />
+                            <a href={siteContent.contactActions.phoneHref} className="font-semibold text-text hover:text-primary">
+                                Fast bookings: {siteContent.footer.contact.phone}
+                            </a>
                         </div>
 
-                        {/* Performance Stats */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8 border-t border-primary/20 pt-12 mt-20 w-full">
-                            {stats.map((stat, index) => (
-                                <div key={index} className="text-right">
-                                    <div className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-primary mb-1">
+                        <div className="grid grid-cols-2 gap-3 border-t border-black/10 pt-6 dark:border-white/10 sm:grid-cols-4">
+                            {stats.map((stat) => (
+                                <div key={stat.label}>
+                                    <div className="text-xl font-serif font-bold text-primary sm:text-2xl">
                                         {stat.value}
                                     </div>
-                                    <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-text-muted font-medium leading-tight">
+                                    <div className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-text-muted">
                                         {stat.label}
                                     </div>
                                 </div>
@@ -84,13 +59,30 @@ export default function Hero() {
                         </div>
                     </div>
 
+                    <div className="order-1 lg:order-2">
+                        <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-[2.2rem] border border-black/10 bg-surface shadow-xl dark:border-white/10">
+                            <div className="absolute -right-3 -top-3 h-full w-full rounded-[2.2rem] border border-primary/30" />
+                            <Image
+                                src="/images/founder.jpg"
+                                alt="Rekha Parihar performing traditional Rajasthani folk dance"
+                                fill
+                                className="object-cover object-center sm:object-top"
+                                priority
+                                sizes="(max-width: 640px) 94vw, (max-width: 1024px) 54vw, 42vw"
+                            />
+                            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/65 to-transparent" />
+                            <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/30 bg-black/45 p-3 text-white shadow-lg backdrop-blur-[2px] sm:bottom-5 sm:left-5 sm:right-auto sm:max-w-[260px] sm:p-4">
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-light">Founder</p>
+                                <p className="mt-1 text-xl font-serif font-bold leading-tight sm:text-2xl">Rekha Parihar</p>
+                                <p className="mt-1 text-xs uppercase tracking-[0.12em] text-white/85">Artistic Director</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            {/* Background Texture & Gradients */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/[0.03] to-transparent pointer-events-none" />
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
+            <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
+            <div className="pointer-events-none absolute -left-20 bottom-8 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
         </section>
     );
 }

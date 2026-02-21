@@ -1,39 +1,48 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
-  --font-decorative: "Cinzel Decorative", serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", serif;
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", "Noto Sans", sans-serif;
+  --font-decorative: "Didot", "Bodoni MT", "Times New Roman", serif;
 
   /* Rebranded Amber Theme */
-  --color-primary: #f4b322;
-  --color-primary-light: #ffce54;
+  --color-primary: #d28d15;
+  --color-primary-light: #e8ab39;
 
   /* Defaults */
   --color-background: #FFFFFF;
-  --color-surface: #F8F8F8;
-  --color-text: #1A1A1A;
-  --color-text-muted: #666666;
+  --color-surface: #f6f3ed;
+  --color-text: #151515;
+  --color-text-muted: #575757;
 }
 
 /* Theme Classes */
 @layer base {
   :root {
     --color-background: #FFFFFF;
-    --color-surface: #F8F8F8;
-    --color-text: #1A1A1A;
-    --color-text-muted: #4B4B4B;
+    --color-surface: #f6f3ed;
+    --color-text: #151515;
+    --color-text-muted: #575757;
   }
 
   .dark {
-    --color-background: #0B0B0B;
-    --color-surface: #1A1A1A;
-    --color-text: #F5F5F5;
-    --color-text-muted: #A0A0A0;
+    --color-background: #0f0f10;
+    --color-surface: #1e1e20;
+    --color-text: #f5f5f5;
+    --color-text-muted: #bbbbbb;
+  }
+
+  * {
+    @apply min-w-0;
+  }
+
+  html {
+    @apply scroll-smooth;
   }
 
   body {
-    @apply bg-background text-text font-sans antialiased selection:bg-primary/30 transition-colors duration-300;
+    @apply bg-background text-text font-sans antialiased selection:bg-primary/30 transition-colors duration-300 overflow-x-hidden;
+    text-rendering: optimizeLegibility;
   }
 
   h1,
@@ -51,10 +60,53 @@
     @apply transition-colors duration-300;
   }
 
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  p {
+    @apply text-base leading-7 md:text-lg md:leading-8 text-text-muted;
+  }
+
+  main {
+    @apply overflow-x-hidden;
+  }
+
   .premium-gradient {
     @apply bg-gradient-to-br from-primary via-primary-light to-primary;
     background-size: 200% 200%;
     animation: gradient-shift 8s ease infinite;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .mobile-card {
+    @apply rounded-2xl border border-black/10 dark:border-white/10 bg-background;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 5.5rem;
   }
 }
 

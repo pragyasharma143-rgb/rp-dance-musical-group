@@ -20,17 +20,17 @@ export default function AboutPage() {
     return (
         <>
             <Header />
-            <main className="pt-32 pb-24 bg-background">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <main className="bg-background pb-16 pt-24 sm:pt-28">
+                <div className="section-shell">
 
                     {/* section: Our Journey */}
-                    <section className="mb-32">
+                    <section className="mb-20 md:mb-24">
                         <SectionHeading
                             title="Our Journey"
                             subtitle="The Legacy of RP Dance & Musical group"
                         />
-                        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div className="space-y-8 text-lg md:text-xl text-text-muted leading-relaxed font-light">
+                        <div className="mt-10 grid grid-cols-1 items-center gap-8 lg:mt-14 lg:grid-cols-2">
+                            <div className="space-y-6 text-base leading-7 text-text-muted sm:text-lg sm:leading-8">
                                 <p>
                                     Every tradition survives because someone chooses to carry it forward. The journey of RP Dance & Musical group began with that very intention — not merely to perform, but to preserve. What started as one artist’s devotion to heritage gradually became a collective of performers, musicians, and cultural ambassadors committed to presenting Rajasthan’s folk legacy with dignity and authenticity.
                                 </p>
@@ -38,30 +38,35 @@ export default function AboutPage() {
                                     Today, the group travels across stages, cities, and countries, presenting immersive cultural showcases that blend live folk music, original choreography, traditional costumes, authentic instruments, and storytelling through movement. Whether at global festivals, academic institutions, cultural forums, corporate platforms or ceremonial gatherings, each presentation is thoughtfully crafted to honour tradition while connecting meaningfully with contemporary audiences.
                                 </p>
                             </div>
-                            <div className="relative aspect-video rounded-tr-[80px] overflow-hidden border border-white/5">
-                                <Image
-                                    src="/images/founder.jpg"
-                                    alt="RP Dance & Musical group Performance"
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                            <div className="grid h-full grid-cols-2 gap-3">
+                                <div className="relative aspect-square rounded-tl-[40px] overflow-hidden border border-white/5">
+                                    <Image src="/images/founder.jpg" alt="Traditional dance journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                </div>
+                                <div className="relative aspect-square overflow-hidden border border-white/5">
+                                    <Image src="/images/founder_portrait.jpg" alt="Live music journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                </div>
+                                <div className="relative aspect-square overflow-hidden border border-white/5">
+                                    <Image src="/images/poster_original.jpg" alt="Festival journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                </div>
+                                <div className="relative aspect-square rounded-br-[40px] overflow-hidden border border-white/5">
+                                    <Image src="/images/founder_portrait.jpg" alt="International performance highlight" fill className="object-cover object-top" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                </div>
                             </div>
                         </div>
-                        <p className="mt-12 text-text font-serif italic text-xl md:text-2xl border-l-4 border-primary pl-8 py-4 bg-surface/50">
+                        <p className="mt-8 border-l-4 border-primary bg-surface/50 py-3 pl-5 text-lg font-serif italic text-text sm:pl-8 sm:text-2xl">
                             “Here, performances are not designed for spotlight — they are choreographed to keep the legacy alive.”
                         </p>
                     </section>
 
                     {/* section: About the Founder */}
-                    <section className="mb-32">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <section className="mb-20 md:mb-24">
+                        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-14">
                             <div className="order-2 lg:order-1">
                                 <SectionHeading
                                     title="Rekha Parihar"
                                     subtitle="About the Founder"
                                 />
-                                <div className="mt-12 space-y-6 text-lg text-text-muted leading-relaxed font-light">
+                                <div className="mt-8 space-y-5 text-base leading-7 text-text-muted sm:text-lg sm:leading-8">
                                     <p>
                                         Stepping into dance at the age of fourteen, Rekha Parihar’s journey began with genuine curiosity and gradually evolved into a lifelong cultural calling. She earned her B.A. in Raga, received classical training at Rajasthan Sangeet & Kathak Kendra, and went on to master a wide spectrum of Rajasthan’s folk traditions.
                                     </p>
@@ -85,10 +90,11 @@ export default function AboutPage() {
                                 <div className="absolute inset-0 border-[1px] border-primary/20 -translate-x-6 -translate-y-6 transition-transform duration-700 group-hover:translate-x-0 group-hover:translate-y-0" />
                                 <div className="relative h-full w-full overflow-hidden border border-white/5 rounded-tr-[100px]">
                                     <Image
-                                        src="/images/founder_portrait.jpg"
+                                        src="/images/founder-full-body.jpg"
                                         alt="Rekha Parihar - Founder"
                                         fill
-                                        className="object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+                                        className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.02]"
+                                        sizes="(max-width: 1024px) 90vw, 40vw"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                                 </div>
@@ -98,20 +104,20 @@ export default function AboutPage() {
                     </section>
 
                     {/* section: Key Recognitions */}
-                    <section className="mb-32">
+                    <section className="mb-20 md:mb-24">
                         <SectionHeading
                             title="Key Recognitions & Honours"
                             subtitle="Awards & Milestones"
                         />
-                        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+                        <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-2">
                             {recognitions.map((item, idx) => (
-                                <div key={idx} className="flex gap-8 group">
-                                    <div className="text-3xl font-serif font-black text-primary/30 group-hover:text-primary transition-colors duration-300 shrink-0">
+                                <div key={idx} className="flex gap-5 group">
+                                    <div className="shrink-0 text-2xl font-serif font-black text-primary/30 transition-colors duration-300 group-hover:text-primary">
                                         {item.year}
                                     </div>
                                     <div className="space-y-2">
                                         <div className="h-0.5 w-8 bg-primary/20 group-hover:w-full transition-all duration-500" />
-                                        <p className="text-lg text-text-muted leading-relaxed group-hover:text-text transition-colors duration-300">
+                                        <p className="text-base leading-7 text-text-muted transition-colors duration-300 group-hover:text-text">
                                             {item.honor}
                                         </p>
                                     </div>
@@ -121,8 +127,8 @@ export default function AboutPage() {
                     </section>
 
                     {/* Closing Section */}
-                    <section className="text-center py-20 border-t border-white/5">
-                        <h3 className="text-3xl md:text-4xl font-serif text-text-muted italic max-w-3xl mx-auto leading-relaxed">
+                    <section className="border-t border-white/5 py-14 text-center">
+                        <h3 className="mx-auto max-w-3xl text-2xl font-serif italic leading-relaxed text-text-muted md:text-4xl">
                             Some journeys create success. <br />
                             A few create <span className="text-primary not-italic font-bold">legacy</span>. This is one of them.
                         </h3>

@@ -14,7 +14,12 @@ export const siteContent = {
   hero: {
     title: "Some artists perform. Some preserve legacies.",
     subtitle: "A few — like Rekha Parihar — become the bridge between tradition and time.",
-    primaryCTA: { label: "Book a Performance", href: "/contact" },
+    bullets: [
+      "Custom stage concepts for weddings, festivals, and corporate events.",
+      "Live folk music, original choreography, and authentic costumes.",
+      "Reliable planning support from enquiry to performance day.",
+    ],
+    primaryCTA: { label: "Get Pricing & Availability", href: "/contact" },
     secondaryCTA: { label: "Explore Our Work", href: "/work" },
     stats: [
       { value: "1,500+", label: "Performances" },
@@ -38,44 +43,44 @@ export const siteContent = {
   services: [
     {
       id: "tailored-stage",
-      title: "Tailored Stage Concepts for Tourism & Hospitality Events",
-      description: "Custom-designed performances aligned with venue theme, audience profile, and event atmosphere.",
+      title: "Tailored Concepts for Hospitality Events",
+      description: "We shape each set to your venue, audience, and event mood.",
     },
     {
       id: "traditional-themed",
-      title: "Traditional & Themed Folk Dance Performances",
-      description: "Authentic Rajasthani dance presentations rich in grace, colour, expression, and storytelling.",
+      title: "Traditional & Themed Dance Performances",
+      description: "Authentic Rajasthani performances with expressive storytelling.",
     },
     {
       id: "cultural-showcase",
-      title: "Cultural Showcase for National & International Events",
-      description: "Professionally curated acts representing India’s artistic heritage for global audiences.",
+      title: "Cultural Showcases for Global Events",
+      description: "Polished showcases built for domestic and international stages.",
     },
     {
       id: "live-folk-music",
       title: "Live Folk Music Ensemble",
-      description: "Traditional musicians performing live with original instruments and rhythmic compositions.",
+      description: "Live singers and musicians using traditional instruments.",
     },
     {
       id: "interactive-workshops",
-      title: "Interactive Workshops & Learning Programs",
-      description: "Engaging sessions that teach movement, rhythm, and cultural understanding.",
+      title: "Interactive Workshops",
+      description: "Engaging sessions that teach rhythm, movement, and heritage.",
     },
     {
       id: "collaborative-fusion",
       title: "Collaborative & Fusion Presentations",
-      description: "Innovative performances blending folk traditions with contemporary concepts.",
+      description: "Contemporary collaborations while preserving folk identity.",
     },
     {
       id: "educational-outreach",
-      title: "Educational Outreach for Institutions",
-      description: "Specially designed cultural modules for schools and colleges to inspire heritage appreciation.",
+      title: "Educational Outreach Programs",
+      description: "Cultural modules for schools and colleges with guided learning.",
     },
   ],
   gallery: [
-    { id: 1, src: "/images/gallery-1.jpg", alt: "Ghoomar Performance in Dubai", category: "International" },
-    { id: 2, src: "/images/gallery-2.jpg", alt: "Kalbelia Performance Jodhpur", category: "Domestic" },
-    { id: 3, src: "/images/gallery-3.jpg", alt: "Fire Dance Spectacle", category: "Event" },
+    { id: 1, src: "/images/poster_original.jpg", alt: "Ghoomar performance on international stage", category: "International" },
+    { id: 2, src: "/images/founder_portrait.jpg", alt: "Kalbelia performance in a cultural event", category: "Domestic" },
+    { id: 3, src: "/images/heritage_vision.jpg", alt: "Live folk ensemble and choreography showcase", category: "Event" },
   ],
   media: [
     { id: 1, title: "Feature in Rajasthan Patrika", date: "Jan 2024", outlet: "Press" },
@@ -86,11 +91,18 @@ export const siteContent = {
       address: "Jaipur, Rajasthan",
       phone: "+91 - 76658 60002",
       email: "event@rekhaparihar.com",
+      hours: "Mon-Sat, 10:00 AM-7:00 PM IST",
+      mapLink: "https://maps.google.com/?q=Jaipur+Rajasthan",
     },
     socials: [
-      { name: "Instagram", href: "#" },
-      { name: "Facebook", href: "#" },
-      { name: "YouTube", href: "#" },
+      { name: "Instagram", href: "/contact" },
+      { name: "Facebook", href: "/contact" },
+      { name: "YouTube", href: "/contact" },
     ],
+  },
+  contactActions: {
+    phoneHref: "tel:+917665860002",
+    whatsappHref: "https://wa.me/917665860002",
+    emailHref: "mailto:event@rekhaparihar.com",
   },
 };

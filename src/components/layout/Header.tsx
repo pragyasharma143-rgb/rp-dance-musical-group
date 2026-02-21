@@ -5,28 +5,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteContent } from "@/data/content";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/10 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
+        <header className="sticky top-0 z-50 border-b border-black/10 bg-background/90 backdrop-blur-md transition-colors duration-300 dark:border-white/10">
+            <div className="section-shell">
+                <div className="flex h-16 items-center justify-between md:h-18">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-3 group">
+                    <Link href="/" className="flex items-center gap-2 group" aria-label="RP Dance & Musical group home">
                         {siteContent.header.logoImage && (
-                            <div className="relative w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+                            <div className="relative h-10 w-10 flex-shrink-0">
                                 <Image
                                     src={siteContent.header.logoImage}
-                                    alt="Logo"
-                                    fill
-                                    className="object-contain"
+                                    alt="RP Dance & Musical group logo"
+                                    width={60}
+                                    height={60}
+                                    className="mix-blend-multiply"
                                     priority
                                 />
                             </div>
                         )}
-                        <span className="font-serif text-xl md:text-2xl font-bold tracking-tighter text-primary transition-colors">
+                        <span className="max-w-[220px] font-serif text-base font-bold leading-tight tracking-tight text-primary sm:text-lg md:max-w-none md:text-xl">
                             {siteContent.header.logo}
                         </span>
                     </Link>
@@ -37,36 +39,33 @@ export default function Header() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-sm font-medium text-text-muted hover:text-primary transition-colors duration-200 uppercase tracking-widest"
+                                className="text-sm font-medium text-text-muted hover:text-primary transition-colors duration-200 uppercase tracking-[0.12em]"
                             >
                                 {item.label}
                             </Link>
                         ))}
-                        <div className="pl-4 border-l border-white/10 dark:border-white/10 border-black/10 transition-colors">
+                        <Link
+                            href="/contact"
+                            className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 text-sm font-semibold text-background"
+                        >
+                            Book Now
+                        </Link>
+                        <div className="pl-2 border-l border-black/10 transition-colors dark:border-white/10">
                             <ThemeToggle />
                         </div>
                     </nav>
 
                     {/* Mobile Menu Button + Toggle */}
-                    <div className="md:hidden flex items-center space-x-4">
+                    <div className="md:hidden flex items-center space-x-2">
                         <ThemeToggle />
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-text p-2 focus:outline-none transition-colors"
+                            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-black/10 text-text transition-colors dark:border-white/10"
                             aria-label="Toggle Menu"
+                            aria-expanded={isOpen}
+                            aria-controls="mobile-nav"
                         >
-                            <svg
-                                className="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                {isOpen ? (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                ) : (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                )}
-                            </svg>
+                            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                         </button>
                     </div>
                 </div>
@@ -74,18 +73,34 @@ export default function Header() {
 
             {/* Mobile Nav Drawer */}
             {isOpen && (
-                <div className="md:hidden bg-surface border-b border-white/5 pb-6 transition-colors duration-300">
-                    <div className="px-4 pt-2 space-y-4">
+                <div id="mobile-nav" className="md:hidden border-t border-black/10 bg-surface pb-5 transition-colors duration-300 dark:border-white/10">
+                    <div className="section-shell pt-3 space-y-2">
                         {siteContent.header.nav.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
                                 onClick={() => setIsOpen(false)}
-                                className="block text-lg font-medium text-text-muted hover:text-primary py-2 uppercase tracking-widest border-b border-white/5 transition-colors"
+                                className="flex min-h-11 items-center rounded-xl px-3 text-base font-medium text-text hover:bg-background hover:text-primary transition-colors"
                             >
                                 {item.label}
                             </Link>
                         ))}
+                        <div className="mt-3 grid grid-cols-2 gap-2 pt-2">
+                            <Link
+                                href={siteContent.contactActions.phoneHref}
+                                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-black/10 px-3 text-sm font-semibold text-text dark:border-white/10"
+                            >
+                                <Phone size={16} />
+                                Call
+                            </Link>
+                            <Link
+                                href={siteContent.contactActions.whatsappHref}
+                                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-3 text-sm font-semibold text-background"
+                            >
+                                <MessageCircle size={16} />
+                                WhatsApp
+                            </Link>
+                        </div>
                     </div>
                 </div>
             )}

@@ -5,6 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { siteContent } from "@/data/content";
 import { pageMetadata } from "@/data/metadata";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = pageMetadata.media;
 
@@ -12,37 +13,40 @@ export default function MediaPage() {
     return (
         <>
             <Header />
-            <main className="pt-32 pb-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <main className="pb-16 pt-24 sm:pt-28">
+                <div className="section-shell">
                     <SectionHeading
                         title="Press & Features"
                         subtitle="Media Coverage"
                     />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+                    <div className="mt-8 grid grid-cols-1 gap-4 md:mt-12 md:grid-cols-2">
                         {siteContent.media.map((item) => (
-                            <div key={item.id} className="bg-surface p-10 border border-white/5 relative group hover:border-primary/20 transition-all">
-                                <div className="flex justify-between items-start mb-6">
-                                    <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary bg-primary/10 px-3 py-1">
+                            <article key={item.id} className="group relative rounded-2xl border border-black/10 bg-surface p-6 transition-all hover:border-primary/20 dark:border-white/10 sm:p-8">
+                                <div className="mb-4 flex items-start justify-between">
+                                    <span className="bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-primary">
                                         {item.outlet}
                                     </span>
                                     <span className="text-sm text-text-muted font-mono">{item.date}</span>
                                 </div>
-                                <h3 className="text-2xl font-serif font-bold text-text mb-6 leading-tight">
+                                <h3 className="mb-4 text-2xl font-serif font-bold leading-tight text-text">
                                     {item.title}
                                 </h3>
-                                <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-primary group-hover:gap-4 transition-all duration-300">
-                                    Read Article <span>→</span>
-                                </div>
-                            </div>
+                                <Link href="/contact" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-primary transition-all duration-300 group-hover:gap-3">
+                                    Request Media Kit <span>→</span>
+                                </Link>
+                            </article>
                         ))}
-
-                        {/* Simulated Additional Media Items */}
-                        <div className="bg-surface p-10 border border-white/5 opacity-60">
-                            <div className="h-4 w-20 bg-white/5 mb-6" />
-                            <div className="h-8 w-3/4 bg-white/5 mb-4" />
-                            <div className="h-4 w-1/2 bg-white/5" />
-                        </div>
+                        <article className="rounded-2xl border border-black/10 bg-surface p-6 dark:border-white/10 sm:p-8">
+                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Press Contact</p>
+                            <h3 className="mt-3 text-2xl font-serif font-bold text-text">Need interviews, bios, or event photos?</h3>
+                            <p className="mt-3 text-base leading-7 text-text-muted">
+                                Our team can share assets and schedules for media coverage and festival features.
+                            </p>
+                            <div className="mt-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-primary">
+                                Reach us via Contact Page →
+                            </div>
+                        </article>
                     </div>
                 </div>
             </main>

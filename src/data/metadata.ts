@@ -1,5 +1,3 @@
-import { Metadata } from "next";
-
 export const siteMetadata = {
     title: "RP Dance & Musical group | Rajasthani Folk Excellence",
     description: "Premier Rajasthani folk dance and musical group performing globally. Founded by Ms. Rekha Parihar.",
@@ -11,8 +9,8 @@ export const siteMetadata = {
 
 export const pageMetadata = {
     home: {
-        title: "RP Dance and Musical Group | Some artists perform. Some preserve legacies.",
-        description: "Experience the vibrant heritage of Rajasthan through world-class performance services by RP Dance and Musical Group. A few — like Rekha Parihar — become the bridge between tradition and time.",
+        title: "RP Dance and Musical Group | Book Authentic Rajasthani Folk Performances",
+        description: "Book authentic Rajasthani folk dance and live music for weddings, festivals, hospitality, and corporate events with RP Dance and Musical Group.",
     },
     about: {
         title: "About Us | RP Dance and Musical Group",
