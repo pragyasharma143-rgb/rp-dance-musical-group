@@ -30,7 +30,7 @@ export default function AboutPage() {
                             subtitle="The Legacy of RP Dance & Musical group"
                         />
                         <div className="mt-10 grid grid-cols-1 items-center gap-8 lg:mt-14 lg:grid-cols-2">
-                            <div className="space-y-6 text-base leading-7 text-text-muted sm:text-lg sm:leading-8">
+                            <div className="space-y-6 text-base leading-7 text-text-muted sm:text-lg sm:leading-8" style={{ textAlign: "justify" }}>
                                 <p>
                                     Every tradition survives because someone chooses to carry it forward. The journey of RP Dance & Musical group began with that very intention — not merely to perform, but to preserve. What started as one artist’s devotion to heritage gradually became a collective of performers, musicians, and cultural ambassadors committed to presenting Rajasthan’s folk legacy with dignity and authenticity.
                                 </p>
@@ -40,16 +40,16 @@ export default function AboutPage() {
                             </div>
                             <div className="grid h-full grid-cols-2 gap-3">
                                 <div className="relative aspect-square rounded-tl-[40px] overflow-hidden border border-white/5">
-                                    <Image src="/images/founder.jpg" alt="Traditional dance journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                    <Image src="/images/about/0R7A9474.jpg" alt="Traditional dance journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
                                 </div>
                                 <div className="relative aspect-square overflow-hidden border border-white/5">
-                                    <Image src="/images/founder_portrait.jpg" alt="Live music journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                    <Image src="/images/about/0R7A9512.jpg" alt="Live music journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
                                 </div>
                                 <div className="relative aspect-square overflow-hidden border border-white/5">
-                                    <Image src="/images/poster_original.jpg" alt="Festival journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                    <Image src="/images/about/0R7A9562.jpg" alt="Festival journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
                                 </div>
                                 <div className="relative aspect-square rounded-br-[40px] overflow-hidden border border-white/5">
-                                    <Image src="/images/founder_portrait.jpg" alt="International performance highlight" fill className="object-cover object-top" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                    <Image src="/images/about/098A9373.jpg" alt="International performance highlight" fill className="object-cover object-top" sizes="(max-width: 1024px) 44vw, 22vw" />
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@ export default function AboutPage() {
                                     title="Rekha Parihar"
                                     subtitle="About the Founder"
                                 />
-                                <div className="mt-8 space-y-5 text-base leading-7 text-text-muted sm:text-lg sm:leading-8">
+                                <div className="mt-8 space-y-5 text-base leading-7 text-text-muted sm:text-lg sm:leading-8" style={{ textAlign: "justify" }}>
                                     <p>
                                         Stepping into dance at the age of fourteen, Rekha Parihar’s journey began with genuine curiosity and gradually evolved into a lifelong cultural calling. She earned her B.A. in Raga, received classical training at Rajasthan Sangeet & Kathak Kendra, and went on to master a wide spectrum of Rajasthan’s folk traditions.
                                     </p>
@@ -86,14 +86,14 @@ export default function AboutPage() {
                                 </div>
                             </div>
 
-                            <div className="order-1 lg:order-2 relative group w-full aspect-[3/4] max-w-md mx-auto">
+                            <div className="order-1 lg:order-2 relative group w-full aspect-[4/5] max-w-lg mx-auto">
                                 <div className="absolute inset-0 border-[1px] border-primary/20 -translate-x-6 -translate-y-6 transition-transform duration-700 group-hover:translate-x-0 group-hover:translate-y-0" />
-                                <div className="relative h-full w-full overflow-hidden border border-white/5 rounded-tr-[100px]">
+                                <div className="relative h-full w-full overflow-hidden border border-white/5 rounded-tr-[80px] bg-surface">
                                     <Image
-                                        src="/images/founder-full-body.jpg"
+                                        src="/images/founder.jpg"
                                         alt="Rekha Parihar - Founder"
                                         fill
-                                        className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.02]"
+                                        className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.01]"
                                         sizes="(max-width: 1024px) 90vw, 40vw"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
