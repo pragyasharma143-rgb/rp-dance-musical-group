@@ -22,7 +22,7 @@ export default function ContactCTA() {
                     <CTAButton
                         label="Get a Booking Call"
                         href="/contact"
-                        className="w-full bg-background text-primary hover:bg-white hover:text-primary !shadow-none ring-offset-primary"
+                        className="w-full !bg-white !text-[#161616] border border-white/80 hover:!bg-[#fff7e8] hover:!text-[#161616] !shadow-none ring-offset-primary"
                     />
                     <CTAButton
                         label="View Services"
