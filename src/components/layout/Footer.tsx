@@ -25,13 +25,15 @@ export default function Footer() {
                     <div className="col-span-1 md:col-span-2">
                         <div className="mb-5 flex items-center gap-3">
                             {siteContent.header.logoImage && (
-                                <Image
-                                    src={siteContent.header.logoImage}
-                                    alt="RP Dance & Musical group Logo"
-                                    width={80}
-                                    height={80}
-                                    className="h-14 w-14 flex-shrink-0 mix-blend-multiply"
-                                />
+                                <div className="overflow-hidden rounded-2xl border border-primary/15 bg-white/95 p-1.5 shadow-[0_10px_24px_rgba(210,141,21,0.16)] dark:bg-[#f6f0e2]">
+                                    <Image
+                                        src={siteContent.header.logoImage}
+                                        alt="RP Dance & Musical group Logo"
+                                        width={80}
+                                        height={80}
+                                        className="h-14 w-14 flex-shrink-0 rounded-xl object-contain"
+                                    />
+                                </div>
                             )}
                             <h3 className="font-serif text-2xl font-bold text-primary">
                                 RP Dance & Musical group

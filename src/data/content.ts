@@ -1,12 +1,12 @@
 export const siteContent = {
   header: {
     logo: "RP Dance & Musical group",
-    logoImage: "/images/official_logo.png",
+    logoImage: "/images/logo_nobg.png",
     nav: [
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
       { label: "Services", href: "/services" },
-      { label: "Work", href: "/work" },
+      { label: "Performances", href: "/work" },
       { label: "Media", href: "/media" },
       { label: "Contact", href: "/contact" },
     ],
@@ -14,13 +14,15 @@ export const siteContent = {
   hero: {
     title: "Some artists perform. Some preserve legacies.",
     subtitle: "A few — like Rekha Parihar — become the bridge between tradition and time.",
+    founderTitle: "Ambassador of Rajasthan's Cultural Heritage",
+    eyebrow: "Bringing Rajasthan's Timeless Culture to the Stage",
     bullets: [
       "Custom stage concepts for weddings, festivals, and corporate events.",
       "Live folk music, original choreography, and authentic costumes.",
       "Reliable planning support from enquiry to performance day.",
     ],
     primaryCTA: { label: "Get Pricing & Availability", href: "/contact" },
-    secondaryCTA: { label: "Explore Our Work", href: "/work" },
+    secondaryCTA: { label: "Explore Performances", href: "/work" },
     stats: [
       { value: "1,500+", label: "Performances" },
       { value: "8", label: "Countries" },
@@ -77,10 +79,81 @@ export const siteContent = {
       description: "Cultural modules for schools and colleges with guided learning.",
     },
   ],
+  homeGallery: [
+    {
+      id: 1,
+      src: "/images/gallery-sequenced/homepage-gallery-1.JPG",
+      alt: "A poised moment of cultural storytelling unfolding through graceful movement and vivid costume.",
+      category: "Cultural Storytelling",
+    },
+    {
+      id: 2,
+      src: "/images/gallery-sequenced/homepage-gallery-2.JPG",
+      alt: "An elegant stage image carrying the warmth, rhythm, and ceremonial beauty of Rajasthan.",
+      category: "Vibrant Expression",
+    },
+    {
+      id: 3,
+      src: "/images/gallery-sequenced/homepage-gallery-3.JPG",
+      alt: "A refined performance frame that reflects living traditions through presence, posture, and costume.",
+      category: "Living Traditions",
+    },
+  ],
   gallery: [
-    { id: 1, src: "/images/poster_original.jpg", alt: "Ghoomar performance on international stage", category: "International" },
-    { id: 2, src: "/images/founder_portrait.jpg", alt: "Kalbelia performance in a cultural event", category: "Domestic" },
-    { id: 3, src: "/images/heritage_vision.jpg", alt: "Live folk ensemble and choreography showcase", category: "Event" },
+    {
+      id: 1,
+      src: "/images/gallery-sequenced/gallery-1.JPG",
+      alt: "A graceful performance image shaped by poise, costume, and stagecraft.",
+      category: "Graceful Stage Presence",
+    },
+    {
+      id: 2,
+      src: "/images/gallery-sequenced/gallery-2.JPG",
+      alt: "A vibrant traditional expression that turns the stage into a celebration of heritage.",
+      category: "Vibrant Traditional Expression",
+    },
+    {
+      id: 3,
+      src: "/images/gallery-sequenced/gallery-3.jpg",
+      alt: "A living portrait of Rajasthan's heritage shared through movement and atmosphere.",
+      category: "Living Traditions",
+    },
+    {
+      id: 4,
+      src: "/images/gallery-sequenced/gallery-4.jpg",
+      alt: "An artistic folk presentation captured in a moment of ceremonial beauty.",
+      category: "Artistic Folk Presentation",
+    },
+    {
+      id: 6,
+      src: "/images/gallery-sequenced/gallery-6.JPG",
+      alt: "A heritage performance frame where storytelling and spectacle meet with elegance.",
+      category: "Artistic Folk Presentation",
+    },
+    {
+      id: 7,
+      src: "/images/gallery-sequenced/gallery-7.jpg",
+      alt: "A warm, immersive performance image devoted to heritage promotion through live art.",
+      category: "Heritage Celebration",
+    },
+    {
+      id: 8,
+      src: "/images/gallery-sequenced/gallery-8.JPG",
+      alt: "A richly expressive frame where Rajasthan's cultural spirit feels immediate and alive.",
+      category: "Heritage in Motion",
+    },
+    {
+      id: 9,
+      src: "/images/gallery-sequenced/new-gallery-1.JPG",
+      alt: "A vibrant expression of Rajasthan's living traditions in an open urban setting.",
+      category: "Living Traditions",
+    },
+    {
+      id: 10,
+      src: "/images/gallery-sequenced/new-gallery-2.JPG",
+      alt: "An elegant showcase of folk artistry and storytelling framed by heritage architecture.",
+      category: "Folk Artistry",
+    },
   ],
   media: [
     { id: 1, title: "Feature in Rajasthan Patrika", date: "Jan 2024", outlet: "Press" },

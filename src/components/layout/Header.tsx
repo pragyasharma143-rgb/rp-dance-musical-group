@@ -15,22 +15,27 @@ export default function Header() {
             <div className="section-shell">
                 <div className="flex h-16 items-center justify-between md:h-18">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 group" aria-label="RP Dance & Musical group home">
+                    <Link href="/" className="flex items-center gap-3 group" aria-label="RP Dance & Musical group home">
                         {siteContent.header.logoImage && (
-                            <div className="relative h-10 w-10 flex-shrink-0">
+                            <div className="relative flex-shrink-0 overflow-hidden rounded-2xl border border-primary/15 bg-white/95 p-1.5 shadow-[0_10px_30px_rgba(210,141,21,0.16)] dark:bg-[#f6f0e2]">
                                 <Image
                                     src={siteContent.header.logoImage}
                                     alt="RP Dance & Musical group logo"
-                                    width={60}
-                                    height={60}
-                                    className="mix-blend-multiply"
+                                    width={124}
+                                    height={124}
+                                    className="h-10 w-10 rounded-xl object-contain md:h-11 md:w-11"
                                     priority
                                 />
                             </div>
                         )}
-                        <span className="max-w-[220px] font-serif text-base font-bold leading-tight tracking-tight text-primary sm:text-lg md:max-w-none md:text-xl">
-                            {siteContent.header.logo}
-                        </span>
+                        <div className="min-w-0">
+                            <span className="block max-w-[220px] font-serif text-base font-bold leading-tight tracking-tight text-text sm:text-lg md:max-w-none md:text-xl">
+                                {siteContent.header.logo}
+                            </span>
+                            <span className="hidden text-[11px] uppercase tracking-[0.22em] text-primary sm:block">
+                                By Rekha Parihar
+                            </span>
+                        </div>
                     </Link>
 
                     {/* Desktop Nav */}
@@ -39,7 +44,7 @@ export default function Header() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-sm font-medium text-text-muted hover:text-primary transition-colors duration-200 uppercase tracking-[0.12em]"
+                                className="text-sm font-medium text-text hover:text-primary transition-colors duration-200 uppercase tracking-[0.12em]"
                             >
                                 {item.label}
                             </Link>

@@ -5,15 +5,15 @@ import { siteContent } from "@/data/content";
 import { CheckCircle2, PhoneCall } from "lucide-react";
 
 export default function Hero() {
-    const { title, primaryCTA, secondaryCTA, stats, bullets } = siteContent.hero;
+    const { title, primaryCTA, secondaryCTA, stats, bullets, founderTitle, eyebrow } = siteContent.hero;
 
     return (
         <section className="relative min-h-[calc(100svh-4rem)] overflow-hidden bg-background pb-16 pt-12 md:pb-20 md:pt-16">
             <div className="section-shell relative z-10">
                 <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-12">
                     <div className="order-2 space-y-7 lg:order-1">
-                        <p className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                            Rajasthan Folk Performances
+                        <p className="inline-flex rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary sm:text-xs sm:tracking-[0.18em]">
+                            {eyebrow}
                         </p>
 
                         <h1 className="max-w-2xl font-decorative text-4xl font-bold uppercase leading-tight tracking-[0.04em] text-text sm:text-5xl lg:text-6xl">
@@ -68,6 +68,7 @@ export default function Hero() {
                     <div className="order-1 lg:order-2">
                         <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-[2.2rem] border border-black/10 bg-surface dark:border-white/10">
                             <div className="absolute -right-3 -top-3 h-full w-full rounded-[2.2rem] border border-primary/30" />
+                            <div className="cultural-pattern absolute inset-0 opacity-40" />
                             <Image
                                 src="/images/founder.jpg"
                                 alt="Rekha Parihar performing traditional Rajasthani folk dance"
@@ -78,10 +79,12 @@ export default function Hero() {
                                 sizes="(max-width: 640px) 94vw, (max-width: 1024px) 54vw, 42vw"
                             />
                             <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-primary/45 via-primary/15 to-transparent" />
-                            <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-primary-light/70 bg-primary/70 p-3 text-white sm:bottom-5 sm:left-5 sm:right-auto sm:max-w-[280px] sm:p-4">
-                                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-light">Founder</p>
-                                <p className="mt-1 text-2xl font-serif font-bold leading-tight text-white sm:text-3xl">Rekha Parihar</p>
-                                <p className="mt-1 text-xs uppercase tracking-[0.12em] text-white/85">Artistic Director</p>
+                            <div className="absolute bottom-3 left-3 right-3 rounded-2xl border border-primary-light/50 bg-[linear-gradient(135deg,rgba(77,51,6,0.9),rgba(210,141,21,0.82))] p-4 text-white shadow-[0_18px_40px_rgba(59,34,0,0.25)] sm:bottom-5 sm:left-5 sm:right-auto sm:max-w-[330px] sm:p-5">
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-light">Founder</p>
+                                <p className="mt-2 text-2xl font-serif font-bold leading-tight text-white sm:text-3xl">Rekha Parihar</p>
+                                <p className="mt-2 text-sm leading-6 text-white/90 sm:text-[15px]">
+                                    {founderTitle}
+                                </p>
                             </div>
                         </div>
                     </div>

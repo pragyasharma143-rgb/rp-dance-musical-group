@@ -11,7 +11,7 @@ import CTAButton from "@/components/ui/CTAButton";
 export const metadata: Metadata = pageMetadata.work;
 
 export default function WorkPage() {
-    const items = [...siteContent.gallery, ...siteContent.gallery];
+    const items = siteContent.gallery;
 
     return (
         <>
@@ -19,24 +19,25 @@ export default function WorkPage() {
             <main className="pb-16 pt-24 sm:pt-28">
                 <div className="section-shell">
                     <SectionHeading
-                        title="Legacy in Frames"
-                        subtitle="Our Work & Gallery"
+                        title="Performances"
+                        subtitle="Legacy in Frames"
                     />
 
                     <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
-                        {items.map((item, index) => (
-                            <div key={index} className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-black/10 dark:border-white/10">
+                        {items.map((item) => (
+                            <div key={item.id} className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-black/10 dark:border-white/10">
                                 <Image
                                     src={item.src}
                                     alt={item.alt}
                                     fill
                                     sizes="(max-width: 639px) 94vw, (max-width: 1023px) 48vw, 31vw"
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="object-cover saturate-105 contrast-105 brightness-105 transition-transform duration-700 group-hover:scale-105"
+                                    quality={90}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent z-10" />
-                                <div className="absolute bottom-0 left-0 z-20 p-5 text-white">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent z-10" />
+                                <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/78 via-black/48 to-transparent p-5">
                                     <p className="mb-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary-light">{item.category}</p>
-                                    <h4 className="text-xl font-serif font-bold">{item.alt}</h4>
+                                    <h4 className="text-xl font-serif font-bold !text-white">{item.alt}</h4>
                                 </div>
                             </div>
                         ))}

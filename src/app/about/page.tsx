@@ -40,16 +40,16 @@ export default function AboutPage() {
                             </div>
                             <div className="grid h-full grid-cols-2 gap-3">
                                 <div className="relative aspect-square rounded-tl-[40px] overflow-hidden border border-white/5">
-                                    <Image src="/images/about/0R7A9474.jpg" alt="Traditional dance journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                    <Image src="/images/our-journey/098A9400.JPG" alt="Traditional dance journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
                                 </div>
                                 <div className="relative aspect-square overflow-hidden border border-white/5">
-                                    <Image src="/images/about/0R7A9512.jpg" alt="Live music journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                    <Image src="/images/our-journey/0R7A9530.JPG" alt="Live music journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
                                 </div>
                                 <div className="relative aspect-square overflow-hidden border border-white/5">
-                                    <Image src="/images/about/0R7A9562.jpg" alt="Festival journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                    <Image src="/images/our-journey/0R7A9669.JPG" alt="Festival journey highlight" fill className="object-cover" sizes="(max-width: 1024px) 44vw, 22vw" />
                                 </div>
                                 <div className="relative aspect-square rounded-br-[40px] overflow-hidden border border-white/5">
-                                    <Image src="/images/about/098A9373.jpg" alt="International performance highlight" fill className="object-cover object-top" sizes="(max-width: 1024px) 44vw, 22vw" />
+                                    <Image src="/images/our-journey/IMG_9541.JPG" alt="International performance highlight" fill className="object-cover object-top" sizes="(max-width: 1024px) 44vw, 22vw" />
                                 </div>
                             </div>
                         </div>
@@ -86,17 +86,23 @@ export default function AboutPage() {
                                 </div>
                             </div>
 
-                            <div className="order-1 lg:order-2 relative group w-full aspect-[4/5] max-w-lg mx-auto">
+                            <div className="order-1 lg:order-2 relative group w-full aspect-[4/5] max-w-xl mx-auto">
                                 <div className="absolute inset-0 border-[1px] border-primary/20 -translate-x-6 -translate-y-6 transition-transform duration-700 group-hover:translate-x-0 group-hover:translate-y-0" />
-                                <div className="relative h-full w-full overflow-hidden border border-white/5 rounded-tr-[80px] bg-surface">
+                                <div className="cultural-pattern absolute inset-0 rounded-tr-[86px] opacity-40" />
+                                <div className="relative h-full w-full overflow-hidden border border-white/5 rounded-tr-[86px] rounded-bl-[2.5rem] bg-surface shadow-[0_24px_60px_rgba(24,18,10,0.12)]">
                                     <Image
-                                        src="/images/founder.jpg"
+                                        src="/images/founder/founder-new.jpg"
                                         alt="Rekha Parihar - Founder"
                                         fill
-                                        className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.01]"
+                                        className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                                        quality={92}
                                         sizes="(max-width: 1024px) 90vw, 40vw"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#2f1b05]/25 via-transparent to-transparent" />
+                                    <div className="absolute bottom-4 left-4 rounded-2xl bg-background/88 px-4 py-3 shadow-lg backdrop-blur sm:bottom-6 sm:left-6">
+                                        <p className="text-[11px] uppercase tracking-[0.2em] text-primary">Founder</p>
+                                        <p className="mt-1 font-serif text-xl font-bold text-text">Rekha Parihar</p>
+                                    </div>
                                 </div>
                                 <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
                             </div>
@@ -109,10 +115,13 @@ export default function AboutPage() {
                             title="Key Recognitions & Honours"
                             subtitle="Awards & Milestones"
                         />
+                        <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-primary sm:text-base">
+                            Years of Felicitation
+                        </p>
                         <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-2">
                             {recognitions.map((item, idx) => (
                                 <div key={idx} className="flex gap-5 group">
-                                    <div className="shrink-0 text-2xl font-serif font-black text-primary/30 transition-colors duration-300 group-hover:text-primary">
+                                    <div className="shrink-0 text-2xl font-serif font-black text-primary/70 transition-colors duration-300 group-hover:text-primary dark:text-primary-light/90">
                                         {item.year}
                                     </div>
                                     <div className="space-y-2">

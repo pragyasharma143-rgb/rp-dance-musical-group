@@ -21,8 +21,8 @@ export const pageMetadata = {
         description: "From Ghoomar and Kalbelia to Fire Dance and Langa Manganiyar music, explore the wide range of traditional services offered by RP Dance and Musical Group.",
     },
     work: {
-        title: "Our Work | Gallery of Folk Excellence",
-        description: "A visual journey through performances by RP Dance and Musical Group at international festivals and celebrations.",
+        title: "Performances | Gallery of Folk Excellence",
+        description: "Explore performance moments, cultural showcases, and heritage storytelling by RP Dance and Musical Group.",
     },
     media: {
         title: "Media & Press | RP Dance and Musical Group in the News",

@@ -7,22 +7,22 @@
 
   /* Rebranded Amber Theme */
   --color-primary: #d28d15;
-  --color-primary-light: #e8ab39;
+  --color-primary-light: #efbb52;
 
   /* Defaults */
-  --color-background: #FFFFFF;
-  --color-surface: #f6f3ed;
-  --color-text: #151515;
-  --color-text-muted: #575757;
+  --color-background: #fcfaf6;
+  --color-surface: #f2ece2;
+  --color-text: #17130e;
+  --color-text-muted: #433d36;
 }
 
 /* Theme Classes */
 @layer base {
   :root {
-    --color-background: #FFFFFF;
-    --color-surface: #f6f3ed;
-    --color-text: #151515;
-    --color-text-muted: #575757;
+    --color-background: #fcfaf6;
+    --color-surface: #f2ece2;
+    --color-text: #17130e;
+    --color-text-muted: #433d36;
   }
 
   .dark {
@@ -43,6 +43,9 @@
   body {
     @apply bg-background text-text font-sans antialiased selection:bg-primary/30 transition-colors duration-300 overflow-x-hidden;
     text-rendering: optimizeLegibility;
+    background-image:
+      radial-gradient(circle at top left, rgba(210, 141, 21, 0.08), transparent 26rem),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
   }
 
   h1,
@@ -90,6 +93,13 @@
 
   .mobile-card {
     @apply rounded-2xl border border-black/10 dark:border-white/10 bg-background;
+  }
+
+  .cultural-pattern {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(210, 141, 21, 0.2) 1px, transparent 0),
+      linear-gradient(135deg, rgba(210, 141, 21, 0.08), transparent 60%);
+    background-size: 20px 20px, 100% 100%;
   }
 }
 
